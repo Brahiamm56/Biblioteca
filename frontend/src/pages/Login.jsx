@@ -14,7 +14,8 @@ import {
 import {
   Visibility,
   VisibilityOff,
-  Login as LoginIcon
+  Login as LoginIcon,
+  LocalLibrary as LibraryIcon
 } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext';
 
@@ -64,23 +65,38 @@ export default function Login() {
         }}
       >
         <Paper
-          elevation={3}
+          elevation={2}
           sx={{
             padding: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            width: '100%'
+            width: '100%',
+            borderRadius: 3,
           }}
         >
+          <Box
+            sx={{
+              width: 64,
+              height: 64,
+              borderRadius: 2,
+              backgroundColor: 'primary.main',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mb: 2,
+            }}
+          >
+            <LibraryIcon sx={{ fontSize: 40, color: 'white' }} />
+          </Box>
           <Typography
             component="h1"
             variant="h4"
-            sx={{ mb: 1, fontWeight: 'bold', color: 'primary.main' }}
+            sx={{ mb: 1, fontWeight: 600, color: 'text.primary' }}
           >
-             Biblioteca
+            Biblioteca
           </Typography>
-          <Typography component="h2" variant="h6" sx={{ mb: 3 }}>
+          <Typography component="h2" variant="body1" color="text.secondary" sx={{ mb: 3 }}>
             Sistema de Gestión
           </Typography>
 
@@ -138,17 +154,33 @@ export default function Login() {
               {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </Button>
 
-            <Box sx={{ mt: 2, p: 2, bgcolor: 'info.light', borderRadius: 1 }}>
-              <Typography variant="caption" display="block" gutterBottom>
-                <strong>Credenciales de prueba:</strong>
+            <Paper
+              sx={{
+                mt: 2,
+                p: 2,
+                bgcolor: 'rgba(72, 130, 107, 0.08)',
+                borderRadius: 2,
+                border: '1px solid',
+                borderColor: 'divider',
+              }}
+              elevation={0}
+            >
+              <Typography
+                variant="caption"
+                display="block"
+                gutterBottom
+                fontWeight={600}
+                color="text.primary"
+              >
+                Credenciales de prueba:
               </Typography>
-              <Typography variant="caption" display="block">
-                Usuario: bibliotecario
+              <Typography variant="caption" display="block" color="text.secondary">
+                Usuario: <Box component="span" fontWeight={500} color="text.primary">bibliotecario</Box>
               </Typography>
-              <Typography variant="caption" display="block">
-                Contraseña: admin123
+              <Typography variant="caption" display="block" color="text.secondary">
+                Contraseña: <Box component="span" fontWeight={500} color="text.primary">admin123</Box>
               </Typography>
-            </Box>
+            </Paper>
           </Box>
         </Paper>
       </Box>

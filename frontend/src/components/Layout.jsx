@@ -21,7 +21,8 @@ import {
   People as PeopleIcon,
   MenuBook as BookIcon,
   Logout as LogoutIcon,
-  Menu as MenuIcon
+  Menu as MenuIcon,
+  LocalLibrary as LibraryIcon
 } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext';
 
@@ -50,15 +51,23 @@ export default function Layout({ children }) {
 
   const drawer = (
     <Box>
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div">
-          📚 Biblioteca
+      <Toolbar
+        sx={{
+          backgroundColor: 'primary.main',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <LibraryIcon sx={{ mr: 1 }} />
+        <Typography variant="h6" noWrap component="div" fontWeight={600}>
+          Biblioteca
         </Typography>
       </Toolbar>
       <Divider />
-      <List>
+      <List sx={{ mt: 1, px: 1 }}>
         {menuItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+          <ListItem key={item.text} disablePadding sx={{ mb: 0.5 }}>
             <ListItemButton
               selected={location.pathname === item.path}
               onClick={() => navigate(item.path)}

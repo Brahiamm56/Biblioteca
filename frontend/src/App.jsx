@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -9,24 +9,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Socios from './pages/Socios';
 import Libros from './pages/Libros';
-
-// Tema personalizado
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2'
-    },
-    secondary: {
-      main: '#dc004e'
-    },
-    success: {
-      main: '#4caf50'
-    }
-  },
-  typography: {
-    fontFamily: 'Roboto, Arial, sans-serif'
-  }
-});
+import theme from './theme';
 
 function App() {
   return (
