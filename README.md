@@ -197,12 +197,22 @@ El frontend estará disponible en: `http://localhost:5173`
 3. **Datos de Prueba:**
    - El script SQL incluye datos de ejemplo (libros y socios)
 
-## 📞 Soporte
+.env 
 
-Para problemas o consultas, revisar:
-- Backend README: `backend/README.md`
-- Frontend README: `frontend/README.md`
+# Configuración del servidor
+PORT=3000
 
----
+# Configuración de la base de datos
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=biblioteca
+DB_PORT=3306
 
-Desarrollado con ❤️ para la gestión eficiente de bibliotecas
+# JWT Secret (cambiar en producción)
+JWT_SECRET=biblioteca_secret_key_2024
+
+# Usuario de prueba para login
+ADMIN_USERNAME=bibliotecario
+ADMIN_PASSWORD=admin123
+
